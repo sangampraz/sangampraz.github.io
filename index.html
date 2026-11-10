@@ -290,7 +290,8 @@
     .projects {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px
+      gap: 24px;
+      align-items: stretch;
     }
 
     .project {
@@ -304,9 +305,9 @@
     }
 
     .project:first-child {
-      grid-column: 1/-1;
-      display: grid;
-      grid-template-columns: 1fr 1.15fr
+      grid-column: auto;
+      display: flex;
+      flex-direction: column;
     }
 
     .visual {
@@ -357,7 +358,9 @@
 
     .project-body {
       padding: 28px;
-      flex: 1
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .project h3 {
@@ -411,7 +414,8 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 19px
+      margin-top: auto;
+      padding-top: 20px;
     }
 
     .textlink {
@@ -538,16 +542,6 @@
       .hero {
         gap: 30px;
         padding: 80px 0
-      }
-
-      .projects .project:first-child {
-        display: flex
-      }
-
-      .project:first-child .visual {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-        min-height: 245px
       }
 
       .skill-grid {
@@ -861,7 +855,7 @@
                 Skill Bridge
               </h3>
               <p>
-                Developed **Skill Bridge**, a skills-based job-matching platform designed to connect job seekers with employment 
+                Developed Skill Bridge, a skills-based job-matching platform designed to connect job seekers with employment 
                 opportunities based on their skills, experience, and language abilities. Built backend APIs using TypeScript, Hono, 
                 and Cloudflare Workers, integrated the USAJobs API to retrieve job listings, and implemented a skill-matching 
                 algorithm to recommend relevant opportunities.
@@ -905,7 +899,7 @@
               <div class="project-links">
                 <a class="textlink" href="https://github.com/UWBHacks2026/UWBHacks2026.github.io" rel="noopener noreferrer"
                   target="_blank">
-                  Find project code ↗
+                  Find project code
                 </a>
               </div>
               <p class="note">
