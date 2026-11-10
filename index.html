@@ -1,1231 +1,1142 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <meta content="Sangam Prajapati — Computer Science student at Seattle Pacific University. Explore software projects, technical skills, and professional experience." name="description"/>
-  <meta content="#fafaf8" name="theme-color"/>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="Sangam Prajapati — Computer Science student at Seattle Pacific University. Explore software projects, technical skills, and professional experience."
+    name="description" />
+  <meta content="#fafaf8" name="theme-color" />
   <title>
-   Sangam Prajapati | Computer Science Portfolio
+    Sangam Prajapati | Computer Science Portfolio
   </title>
   <style>
-   :root {
-  --bg:#fafaf8;
-  --paper:#fff;
-  --ink:#202824;
-  --muted:#64706a;
-  --line:#e4e9e3;
-  --accent:#256b55;
-  --soft:#eaf2ec;
-  --shadow:0 14px 45px rgba(20,39,30,.055)
-}
-* {
-  box-sizing:border-box
-}
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:90px
-}
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.65
-}
-a {
-  color:inherit;
-  text-decoration:none
-}
-a:focus-visible,button:focus-visible {
-  outline:3px solid #80bba2;
-  outline-offset:4px
-}
-::selection {
-  background:#cfe8d8
-}
-.container {
-  width:min(1100px,calc(100% - 44px));
-  margin:auto
-}
-.eyebrow {
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:.72rem;
-  font-weight:800;
-  color:var(--accent)
-}
-header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(250,250,248,.95);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line)
-}
-.nav {
-  min-height:74px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px
-}
-.brand {
-  font-weight:800;
-  letter-spacing:-.035em;
-  font-size:1.15rem
-}
-.brand span {
-  color:var(--accent)
-}
-.navlinks {
-  display:flex;
-  align-items:center;
-  gap:25px
-}
-.navlinks a {
-  font-size:.86rem;
-  color:#536159;
-  font-weight:600
-}
-.navlinks a:hover,.textlink:hover {
-  color:var(--accent)
-}
-.menu-toggle {
-  display:none;
-  background:transparent;
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:8px 12px;
-  font:inherit;
-  cursor:pointer
-}
-.hero {
-  padding:112px 0 105px;
-  display:grid;
-  grid-template-columns:minmax(0,1.5fr) minmax(230px,.7fr);
-  gap:65px;
-  align-items:center
-}
-.hero h1 {
-  font-size:clamp(3.3rem,7vw,6.1rem);
-  letter-spacing:-.075em;
-  line-height:1.04;
-  margin:16px 0 20px
-}
-.hero h1 em {
-  font-style:normal;
-  color:var(--accent)
-}
-.hero .lead {
-  font-size:clamp(1.04rem,2vw,1.25rem);
-  color:#536159;
-  max-width:630px
-}
-.meta {
-  font-size:.88rem;
-  color:var(--muted);
-  margin-top:20px
-}
-.actions {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:32px
-}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 20px;
-  border:1px solid var(--accent);
-  border-radius:9px;
-  font-size:.89rem;
-  font-weight:750;
-  transition:transform .2s,background .2s
-}
-.btn:hover {
-  transform:translateY(-2px)
-}
-.btn.primary {
-  background:var(--accent);
-  color:white
-}
-.btn.secondary {
-  background:transparent;
-  color:var(--accent)
-}
-.portrait {
-  aspect-ratio:4/5;
-  border:1px solid #d7e3d8;
-  background:linear-gradient(145deg,#e7eee6,#f3f6ee);
-  border-radius:24px;
-  display:grid;
-  place-items:center;
-  position:relative;
-  overflow:hidden
-}
-.portrait .monogram {
-  font-family:Georgia,serif;
-  font-size:clamp(5rem,12vw,9rem);
-  letter-spacing:-.08em;
-  color:#779987
-}
-.portrait .photocap {
-  position:absolute;
-  bottom:17px;
-  left:0;
-  right:0;
-  text-align:center;
-  font-size:.7rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:#63806f
-}
-section {
-  padding:84px 0;
-  border-top:1px solid var(--line)
-}
-.sectionhead {
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:25px;
-  margin-bottom:34px
-}
-.sectionhead h2 {
-  font-size:clamp(2rem,4vw,3rem);
-  letter-spacing:-.055em;
-  line-height:1.12;
-  margin:9px 0 0
-}
-.sectionhead p {
-  color:var(--muted);
-  max-width:420px;
-  margin:0
-}
-.about-grid {
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:28px
-}
-.panel {
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:29px;
-  box-shadow:var(--shadow)
-}
-.panel p {
-  margin:0 0 14px;
-  color:#526057
-}
-.panel p:last-child {
-  margin-bottom:0
-}
-.fact {
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  border-bottom:1px solid var(--line);
-  padding:13px 0;
-  font-size:.9rem
-}
-.fact:last-child {
-  border-bottom:0
-}
-.fact span {
-  color:var(--muted)
-}
-.fact strong {
-  text-align:right
-}
-.projects {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px
-}
-.project {
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  display:flex;
-  flex-direction:column
-}
-.project:first-child {
-  grid-column:1/-1;
-  display:grid;
-  grid-template-columns:1fr 1.15fr
-}
-.visual {
-  min-height:245px;
-  background:linear-gradient(130deg,#e7efe8,#f0f3eb);
-  border-bottom:1px solid var(--line);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:24px;
-  text-align:center
-}
-.project:first-child .visual {
-  min-height:350px;
-  border-bottom:0;
-  border-right:1px solid var(--line)
-}
-.visual .symbol {
-  font-size:3rem;
-  font-family:Georgia,serif;
-  color:var(--accent);
-  opacity:.85
-}
-.visual .hint {
-  color:#6a8475;
-  font-size:.79rem;
-  max-width:230px
-}
-.visual .filehint {
-  font-size:.72rem;
-  color:#82988a;
-  font-family:ui-monospace,monospace
-}
-.visual img {
-  width:100%;
-  height:100%;
-  max-height:340px;
-  object-fit:cover;
-  border-radius:8px
-}
-.project-body {
-  padding:28px;
-  flex:1
-}
-.project h3 {
-  font-size:1.48rem;
-  letter-spacing:-.035em;
-  line-height:1.22;
-  margin:10px 0 12px
-}
-.project p {
-  color:#5b675f;
-  font-size:.94rem;
-  margin:0 0 15px
-}
-.project .detail {
-  font-size:.86rem
-}
-.project .detail strong {
-  color:#28372d
-}
-.tags {
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin:15px 0
-}
-.tag {
-  display:inline-block;
-  padding:5px 10px;
-  border:1px solid #d9e7db;
-  border-radius:100px;
-  background:#f1f6f0;
-  color:#45644f;
-  font-size:.72rem;
-  font-weight:700
-}
-.status {
-  font-size:.72rem;
-  letter-spacing:.07em;
-  text-transform:uppercase;
-  font-weight:800;
-  color:var(--accent)
-}
-.project-links {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:19px
-}
-.textlink {
-  font-size:.86rem;
-  font-weight:750;
-  color:var(--accent);
-  text-decoration:underline;
-  text-underline-offset:4px
-}
-.note {
-  font-size:.83rem;
-  color:var(--muted);
-  margin-top:17px
-}
-.timeline {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px
-}
-.timeline h3 {
-  margin:6px 0;
-  font-size:1.35rem;
-  letter-spacing:-.03em
-}
-.date {
-  color:var(--accent);
-  font-size:.82rem;
-  font-weight:750
-}
-.timeline ul {
-  padding-left:19px;
-  color:#56635b;
-  margin:14px 0
-}
-.timeline li {
-  margin-bottom:9px
-}
-.skill-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px
-}
-.skill-grid h3 {
-  margin:0 0 14px;
-  font-size:1rem
-}
-.skill-grid p {
-  color:var(--muted);
-  margin:0
-}
-.education {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px
-}
-.education h3 {
-  margin:0 0 7px
-}
-.education p {
-  color:var(--muted);
-  margin:0
-}
-.contact {
-  background:#edf3ed;
-  border-radius:22px;
-  padding:54px;
-  text-align:center
-}
-.contact h2 {
-  font-size:clamp(2rem,4vw,3rem);
-  letter-spacing:-.055em;
-  margin:10px 0
-}
-.contact p {
-  color:#5a695e;
-  max-width:580px;
-  margin:0 auto
-}
-.contact .actions {
-  justify-content:center
-}
-.socials {
-  display:flex;
-  gap:22px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:25px;
-  font-weight:700;
-  color:var(--accent);
-  font-size:.9rem
-}
-footer {
-  padding:30px 0;
-  color:var(--muted);
-  font-size:.83rem
-}
-.footerline {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap
-}
-@media(max-width:850px) {
-  .hero {
-    gap:30px;
-    padding:80px 0
-  }
-  .projects .project:first-child {
-    display:flex
-  }
-  .project:first-child .visual {
-    border-right:0;
-    border-bottom:1px solid var(--line);
-    min-height:245px
-  }
-  .skill-grid {
-    grid-template-columns:1fr 1fr
-  }
-}
-@media(max-width:680px) {
-  .container {
-    width:min(100% - 30px,1100px)
-  }
-  .menu-toggle {
-    display:block
-  }
-  .navlinks {
-    display:none;
-    position:absolute;
-    left:0;
-    right:0;
-    top:74px;
-    background:var(--bg);
-    padding:20px 22px;
-    border-bottom:1px solid var(--line);
-    flex-direction:column;
-    align-items:flex-start;
-    gap:18px
-  }
-  .navlinks.open {
-    display:flex
-  }
-  .hero {
-    grid-template-columns:1fr;
-    padding:65px 0
-  }
-  .portrait {
-    max-width:300px;
-    aspect-ratio:4/3;
-    order:-1
-  }
-  .hero h1 {
-    font-size:3.8rem
-  }
-  .sectionhead {
-    display:block
-  }
-  .sectionhead p {
-    margin-top:15px
-  }
-  .about-grid,.projects,.timeline,.education,.skill-grid {
-    grid-template-columns:1fr
-  }
-  .project:first-child {
-    grid-column:auto
-  }
-  .panel,.project-body {
-    padding:23px
-  }
-  .contact {
-    padding:35px 20px
-  }
-  section {
-    padding:66px 0
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior:auto
-  }
-  .btn {
-    transition:none
-  }
-}
+    :root {
+      --bg: #fafaf8;
+      --paper: #fff;
+      --ink: #202824;
+      --muted: #64706a;
+      --line: #e4e9e3;
+      --accent: #256b55;
+      --soft: #eaf2ec;
+      --shadow: 0 14px 45px rgba(20, 39, 30, .055)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #80bba2;
+      outline-offset: 4px
+    }
+
+    ::selection {
+      background: #cfe8d8
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 44px));
+      margin: auto
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--accent)
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250, 250, 248, .95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.035em;
+      font-size: 1.15rem
+    }
+
+    .brand span {
+      color: var(--accent)
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 25px
+    }
+
+    .navlinks a {
+      font-size: .86rem;
+      color: #536159;
+      font-weight: 600
+    }
+
+    .navlinks a:hover,
+    .textlink:hover {
+      color: var(--accent)
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font: inherit;
+      cursor: pointer
+    }
+
+    .hero {
+      padding: 112px 0 105px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(230px, .7fr);
+      gap: 65px;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(3.3rem, 7vw, 6.1rem);
+      letter-spacing: -.075em;
+      line-height: 1.04;
+      margin: 16px 0 20px
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent)
+    }
+
+    .hero .lead {
+      font-size: clamp(1.04rem, 2vw, 1.25rem);
+      color: #536159;
+      max-width: 630px
+    }
+
+    .meta {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-top: 20px
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid var(--accent);
+      border-radius: 9px;
+      font-size: .89rem;
+      font-weight: 750;
+      transition: transform .2s, background .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--accent)
+    }
+
+    .portrait {
+      aspect-ratio: 4/5;
+      border: 1px solid #d7e3d8;
+      background: linear-gradient(145deg, #e7eee6, #f3f6ee);
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .portrait .monogram {
+      font-family: Georgia, serif;
+      font-size: clamp(5rem, 12vw, 9rem);
+      letter-spacing: -.08em;
+      color: #779987
+    }
+
+    .portrait .photocap {
+      position: absolute;
+      bottom: 17px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #63806f
+    }
+
+    section {
+      padding: 84px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .sectionhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 34px
+    }
+
+    .sectionhead h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.055em;
+      line-height: 1.12;
+      margin: 9px 0 0
+    }
+
+    .sectionhead p {
+      color: var(--muted);
+      max-width: 420px;
+      margin: 0
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 28px
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 29px;
+      box-shadow: var(--shadow)
+    }
+
+    .panel p {
+      margin: 0 0 14px;
+      color: #526057
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0
+    }
+
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      padding: 13px 0;
+      font-size: .9rem
+    }
+
+    .fact:last-child {
+      border-bottom: 0
+    }
+
+    .fact span {
+      color: var(--muted)
+    }
+
+    .fact strong {
+      text-align: right
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px
+    }
+
+    .project {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column
+    }
+
+    .project:first-child {
+      grid-column: 1/-1;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr
+    }
+
+    .visual {
+      min-height: 245px;
+      background: linear-gradient(130deg, #e7efe8, #f0f3eb);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 24px;
+      text-align: center
+    }
+
+    .project:first-child .visual {
+      min-height: 350px;
+      border-bottom: 0;
+      border-right: 1px solid var(--line)
+    }
+
+    .visual .symbol {
+      font-size: 3rem;
+      font-family: Georgia, serif;
+      color: var(--accent);
+      opacity: .85
+    }
+
+    .visual .hint {
+      color: #6a8475;
+      font-size: .79rem;
+      max-width: 230px
+    }
+
+    .visual .filehint {
+      font-size: .72rem;
+      color: #82988a;
+      font-family: ui-monospace, monospace
+    }
+
+    .visual img {
+      width: 100%;
+      height: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      border-radius: 8px
+    }
+
+    .project-body {
+      padding: 28px;
+      flex: 1
+    }
+
+    .project h3 {
+      font-size: 1.48rem;
+      letter-spacing: -.035em;
+      line-height: 1.22;
+      margin: 10px 0 12px
+    }
+
+    .project p {
+      color: #5b675f;
+      font-size: .94rem;
+      margin: 0 0 15px
+    }
+
+    .project .detail {
+      font-size: .86rem
+    }
+
+    .project .detail strong {
+      color: #28372d
+    }
+
+    .tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin: 15px 0
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #d9e7db;
+      border-radius: 100px;
+      background: #f1f6f0;
+      color: #45644f;
+      font-size: .72rem;
+      font-weight: 700
+    }
+
+    .status {
+      font-size: .72rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--accent)
+    }
+
+    .project-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 19px
+    }
+
+    .textlink {
+      font-size: .86rem;
+      font-weight: 750;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 4px
+    }
+
+    .note {
+      font-size: .83rem;
+      color: var(--muted);
+      margin-top: 17px
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px
+    }
+
+    .timeline h3 {
+      margin: 6px 0;
+      font-size: 1.35rem;
+      letter-spacing: -.03em
+    }
+
+    .date {
+      color: var(--accent);
+      font-size: .82rem;
+      font-weight: 750
+    }
+
+    .timeline ul {
+      padding-left: 19px;
+      color: #56635b;
+      margin: 14px 0
+    }
+
+    .timeline li {
+      margin-bottom: 9px
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .skill-grid h3 {
+      margin: 0 0 14px;
+      font-size: 1rem
+    }
+
+    .skill-grid p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px
+    }
+
+    .education h3 {
+      margin: 0 0 7px
+    }
+
+    .education p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .contact {
+      background: #edf3ed;
+      border-radius: 22px;
+      padding: 54px;
+      text-align: center
+    }
+
+    .contact h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.055em;
+      margin: 10px 0
+    }
+
+    .contact p {
+      color: #5a695e;
+      max-width: 580px;
+      margin: 0 auto
+    }
+
+    .contact .actions {
+      justify-content: center
+    }
+
+    .socials {
+      display: flex;
+      gap: 22px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 25px;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: .9rem
+    }
+
+    footer {
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: .83rem
+    }
+
+    .footerline {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap
+    }
+
+    @media(max-width:850px) {
+      .hero {
+        gap: 30px;
+        padding: 80px 0
+      }
+
+      .projects .project:first-child {
+        display: flex
+      }
+
+      .project:first-child .visual {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        min-height: 245px
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:680px) {
+      .container {
+        width: min(100% - 30px, 1100px)
+      }
+
+      .menu-toggle {
+        display: block
+      }
+
+      .navlinks {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 74px;
+        background: var(--bg);
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px
+      }
+
+      .navlinks.open {
+        display: flex
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 0
+      }
+
+      .portrait {
+        max-width: 300px;
+        aspect-ratio: 4/3;
+        order: -1
+      }
+
+      .hero h1 {
+        font-size: 3.8rem
+      }
+
+      .sectionhead {
+        display: block
+      }
+
+      .sectionhead p {
+        margin-top: 15px
+      }
+
+      .about-grid,
+      .projects,
+      .timeline,
+      .education,
+      .skill-grid {
+        grid-template-columns: 1fr
+      }
+
+      .project:first-child {
+        grid-column: auto
+      }
+
+      .panel,
+      .project-body {
+        padding: 23px
+      }
+
+      .contact {
+        padding: 35px 20px
+      }
+
+      section {
+        padding: 66px 0
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      .btn {
+        transition: none
+      }
+    }
   </style>
- </head>
- <body>
+</head>
+
+<body>
   <header>
-   <nav aria-label="Main navigation" class="nav container">
-    <a class="brand" href="#home">
-     <span>
-     </span>
-    </a>
-    <button aria-controls="navlinks" aria-expanded="false" class="menu-toggle" id="menuToggle">
-     Menu ☰
-    </button>
-    <div class="navlinks" id="navlinks">
-     <a href="#about">
-      About
-     </a>
-     <a href="#projects">
-      Projects
-     </a>
-     <a href="#experience">
-      Experience
-     </a>
-     <a href="#skills">
-      Skills
-     </a>
-     <a href="#education">
-      Education
-     </a>
-     <a href="#contact">
-      Contact
-     </a>
-    </div>
-   </nav>
+    <nav aria-label="Main navigation" class="nav container">
+      <a class="brand" href="#home">
+        <span>
+        </span>
+      </a>
+      <button aria-controls="navlinks" aria-expanded="false" class="menu-toggle" id="menuToggle">
+        Menu ☰
+      </button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">
+          About
+        </a>
+        <a href="#projects">
+          Projects
+        </a>
+        <a href="#experience">
+          Experience
+        </a>
+        <a href="#skills">
+          Skills
+        </a>
+        <a href="#education">
+          Education
+        </a>
+        <a href="#contact">
+          Contact
+        </a>
+      </div>
+    </nav>
   </header>
   <main>
-   <div class="container">
-    <div class="hero" id="home">
-     <div>
-      <div class="eyebrow">
-       Computer Science Student · Seattle, WA
-      </div>
-      <h1>
-       Hi, I'm
-       <br/>
-       <em>
-        Sangam Prajapati.
-       </em>
-      </h1>
-      <p class="lead">
-       I enjoy building thoughtful software, exploring real-world problems, and learning how technology can make a meaningful difference.
-      </p>
-      <p class="meta">
-       Seattle Pacific University · B.S. in Computer Science · Expected graduation:
-       <strong>
-        June 2027
-       </strong>
-      </p>
-      <div class="actions">
-       <a class="btn primary" href="#projects">
-        Explore my projects ↗
-       </a>
-       <a class="btn secondary" href="https://github.com/sangampraz" rel="noopener noreferrer" target="_blank">
-        View GitHub ↗
-       </a>
-      </div>
-     </div>
-     <div aria-label="Portrait placeholder with initials SP. Replace with your own photograph if desired." class="portrait" role="img">
-      <div class="monogram">
-       SP
-      </div>
-      <div class="photocap">
-       Portrait placeholder
-      </div>
-     </div>
-    </div>
-   </div>
-   <section id="about">
     <div class="container">
-     <div class="sectionhead">
-      <div>
-       <div class="eyebrow">
-        01 / Introduction
-       </div>
-       <h2>
-        About me
-       </h2>
+      <div class="hero" id="home">
+        <div>
+          <div class="eyebrow">
+            Computer Science Student · Seattle, WA
+          </div>
+          <h1>
+            Hi, I'm
+            <br />
+            <em>
+              Sangam Prajapati.
+            </em>
+          </h1>
+          <p class="lead">
+            I enjoy building thoughtful software, exploring real-world problems, and learning how technology can make a
+            meaningful difference.
+          </p>
+          <p class="meta">
+            Seattle Pacific University · B.S. in Computer Science · Expected graduation:
+            <strong>
+              June 2027
+            </strong>
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">
+              Explore my projects ↗
+            </a>
+            <a class="btn secondary" href="https://github.com/sangampraz" rel="noopener noreferrer" target="_blank">
+              View GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="portrait">
+          <img src="images/linkdin.jfif" alt="Portrait of Sangam Prajapati" class="profile-photo" />
+        </div>
+
       </div>
-      <p>
-       A little about my background and the work that interests me.
-      </p>
-     </div>
-     <div class="about-grid">
-      <div class="panel">
-       <p>
-        I'm Sangam, a Computer Science student at Seattle Pacific University with an interest in building practical, user-centered software. My work spans object-oriented programming, backend development, and collaborative product design.
-       </p>
-       <p>
-        Through academic programming projects and team-based work such as AthleteGuard and Skill Bridge, I'm developing the skills to turn ideas into reliable software. I value clear communication, continuous learning, and thoughtful problem-solving.
-       </p>
-      </div>
-      <div class="panel">
-       <div class="fact">
-        <span>
-         Currently
-        </span>
-        <strong>
-         CS Student
-        </strong>
-       </div>
-       <div class="fact">
-        <span>
-         University
-        </span>
-        <strong>
-         Seattle Pacific University
-        </strong>
-       </div>
-       <div class="fact">
-        <span>
-         Graduation
-        </span>
-        <strong>
-         June 2027 (expected)
-        </strong>
-       </div>
-       <div class="fact">
-        <span>
-         Location
-        </span>
-        <strong>
-         Seattle, Washington
-        </strong>
-       </div>
-      </div>
-     </div>
     </div>
-   </section>
-   <section id="projects">
-    <div class="container">
-     <div class="sectionhead">
-      <div>
-       <div class="eyebrow">
-        02 / Selected Work
-       </div>
-       <h2>
-        Projects
-       </h2>
+    <section id="about">
+      <div class="container">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">
+              Introduction
+            </div>
+            <h2>
+              About me
+            </h2>
+          </div>
+          <p>
+            A little about my background and the work that interests me.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>
+              I'm Sangam, a Computer Science student at Seattle Pacific University with an interest in building
+              practical, user-centered software. My work spans object-oriented programming, backend development, and
+              collaborative product design.
+            </p>
+            <p>
+              Through academic programming projects and team-based work such as AthleteGuard and Skill Bridge, I'm
+              developing the skills to turn ideas into reliable software. I value clear communication, continuous
+              learning, and thoughtful problem-solving.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="fact">
+              <span>
+                Currently
+              </span>
+              <strong>
+                CS Student
+              </strong>
+            </div>
+            <div class="fact">
+              <span>
+                University
+              </span>
+              <strong>
+                Seattle Pacific University
+              </strong>
+            </div>
+            <div class="fact">
+              <span>
+                Graduation
+              </span>
+              <strong>
+                June 2027 (expected)
+              </strong>
+            </div>
+            <div class="fact">
+              <span>
+                Location
+              </span>
+              <strong>
+                Seattle, Washington
+              </strong>
+            </div>
+          </div>
+        </div>
       </div>
-      <p>
-       Selected team and individual work, with the problem, approach, skills, and current status of each project.
-      </p>
-     </div>
-     <div class="projects">
-      <article class="project">
-       <div class="visual">
-        <div class="symbol">
-         ◎
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">
+            </div>
+            <h2>
+              Projects
+            </h2>
+          </div>
+          <p>
+            Selected team and individual work, with the problem, approach, skills, and current status of each project.
+          </p>
         </div>
-        <div class="hint">
-         Add an AthleteGuard prototype, architecture diagram, or dashboard screenshot
+        <div class="projects">
+          <article class="project">
+            <div class="project-body">
+              <div class="status">
+                Capstone · In development · Team project
+              </div>
+              <h3>
+                AthleteGuard
+              </h3>
+              <p>
+                A sports-focused platform concept for tracking training load, recovery, and potential injury risk. The
+                project explores how performance data and human coaching support can help athletes make more informed
+                training decisions.
+              </p>
+              <p class="detail">
+                <strong>
+                  Process:
+                </strong>
+                Defining the MVP, organizing user stories, evaluating feature complexity, and planning an iterative
+                development approach.
+              </p>
+              <p class="detail">
+                <strong>
+                  My role:
+                </strong>
+                Team member contributing to project planning and feature discussions.
+                <em>
+                  I am responsible to collect the data of players and do data analytics to build a predictable injury model with the help of Ai. 
+                  Train Ai with raw data to be able to study trend and flag players when in doubt. 
+                </em>
+              </p>
+              <p class="detail">
+                <strong>
+                  Skills:
+                </strong>
+                Agile planning, requirements analysis, product design, team collaboration, machine learning.
+              </p>
+              <div class="tags">
+                <span class="tag">
+                  Capstone
+                </span>
+                <span class="tag">
+                  Agile / Scrum
+                </span>
+                <span class="tag">
+                  Product Design
+                </span>
+              </div>
+              <div class="project-links">
+                <a class="textlink" href="https://github.com/sangampraz?tab=repositories" rel="noopener noreferrer"
+                  target="_blank">
+                  Browse my repositories
+                </a>
+              </div>
+              <p class="note">
+              </p>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-body">
+              <div class="status">
+                Hackathon · Team project
+              </div>
+              <h3>
+                Skill Bridge
+              </h3>
+              <p>
+                Developed **Skill Bridge**, a skills-based job-matching platform designed to connect job seekers with employment 
+                opportunities based on their skills, experience, and language abilities. Built backend APIs using TypeScript, Hono, 
+                and Cloudflare Workers, integrated the USAJobs API to retrieve job listings, and implemented a skill-matching 
+                algorithm to recommend relevant opportunities.
+              </p>
+              <p class="detail">
+                <strong>
+                  Process:
+                </strong>
+                Modeling candidates and jobs, building backend routes, and working through database and integration
+                challenges.
+              </p>
+              <p class="detail">
+                <strong>
+                  My role:
+                </strong>
+                Team contributor.
+                <em>
+                  Designed and developed the backend infrastructure for Skill Bridge, a skills-based job-matching platform. 
+                  Built and managed a relational database using Drizzle ORM, SQLite, and Cloudflare D1 to store user profiles, 
+                  candidate skills, languages, and job listings. Developed RESTful APIs using TypeScript and Hono to support 
+                  data management and communication between the frontend and backend.
+                </em>
+              </p>
+              <p class="detail">
+                <strong>
+                  Skills:
+                </strong>
+                TypeScript, Hono, Cloudflare Workers, Drizzle ORM, SQLite / D1, API integration.
+              </p>
+              <div class="tags">
+                <span class="tag">
+                  TypeScript
+                </span>
+                <span class="tag">
+                  Hono
+                </span>
+                <span class="tag">
+                  Cloudflare D1
+                </span>
+              </div>
+              <div class="project-links">
+                <a class="textlink" href="https://github.com/UWBHacks2026/UWBHacks2026.github.io" rel="noopener noreferrer"
+                  target="_blank">
+                  Find project code ↗
+                </a>
+              </div>
+              <p class="note">
+              </p>
+            </div>
+          </article>
         </div>
-        <div class="filehint">
-         Suggested: images/athleteguard.png
-        </div>
-       </div>
-       <div class="project-body">
-        <div class="status">
-         Capstone · In development · Team project
-        </div>
-        <h3>
-         AthleteGuard
-        </h3>
-        <p>
-         A sports-focused platform concept for tracking training load, recovery, and potential injury risk. The project explores how performance data and human coaching support can help athletes make more informed training decisions.
-        </p>
-        <p class="detail">
-         <strong>
-          Process:
-         </strong>
-         Defining the MVP, organizing user stories, evaluating feature complexity, and planning an iterative development approach.
-        </p>
-        <p class="detail">
-         <strong>
-          My role:
-         </strong>
-         Team member contributing to project planning and feature discussions.
-         <em>
-          Update with your exact development responsibilities.
-         </em>
-        </p>
-        <p class="detail">
-         <strong>
-          Skills:
-         </strong>
-         Agile planning, requirements analysis, product design, team collaboration.
-        </p>
-        <div class="tags">
-         <span class="tag">
-          Capstone
-         </span>
-         <span class="tag">
-          Agile / Scrum
-         </span>
-         <span class="tag">
-          Product Design
-         </span>
-        </div>
-        <div class="project-links">
-         <a class="textlink" href="https://github.com/sangampraz?tab=repositories" rel="noopener noreferrer" target="_blank">
-          Browse my repositories ↗
-         </a>
-        </div>
-        <p class="note">
-         Planned features are not presented as completed functionality. Add a direct repository/demo link and team size when confirmed.
-        </p>
-       </div>
-      </article>
-      <article class="project">
-       <div class="visual">
-        <div class="symbol">
-         ⌘
-        </div>
-        <div class="hint">
-         Add a Skill Bridge screenshot or job-matching flow diagram
-        </div>
-        <div class="filehint">
-         Suggested: images/skillbridge.png
-        </div>
-       </div>
-       <div class="project-body">
-        <div class="status">
-         Hackathon · Team project
-        </div>
-        <h3>
-         Skill Bridge
-        </h3>
-        <p>
-         A skills-based job matching project that uses candidate skills and job requirements to identify relevant opportunities. The concept incorporates USAJobs data and a simple match-score approach.
-        </p>
-        <p class="detail">
-         <strong>
-          Process:
-         </strong>
-         Modeling candidates and jobs, building backend routes, and working through database and integration challenges.
-        </p>
-        <p class="detail">
-         <strong>
-          My role:
-         </strong>
-         Team contributor.
-         <em>
-          Specify the backend routes, schema, or matching features you personally implemented.
-         </em>
-        </p>
-        <p class="detail">
-         <strong>
-          Skills:
-         </strong>
-         TypeScript, Hono, Cloudflare Workers, Drizzle ORM, SQLite / D1, API integration.
-        </p>
-        <div class="tags">
-         <span class="tag">
-          TypeScript
-         </span>
-         <span class="tag">
-          Hono
-         </span>
-         <span class="tag">
-          Cloudflare D1
-         </span>
-         <span class="tag">
-          USAJobs API
-         </span>
-        </div>
-        <div class="project-links">
-         <a class="textlink" href="https://github.com/sangampraz?tab=repositories" rel="noopener noreferrer" target="_blank">
-          Find project code ↗
-         </a>
-        </div>
-        <p class="note">
-         Add team size, personal contributions, and a direct source-code link.
-        </p>
-       </div>
-      </article>
-      <article class="project">
-       <div class="visual">
-        <div class="symbol">
-         ƒ(x)
-        </div>
-        <div class="hint">
-         Add a screenshot of your polynomial class or test output
-        </div>
-        <div class="filehint">
-         Suggested: images/polynomial.png
-        </div>
-       </div>
-       <div class="project-body">
-        <div class="status">
-         Academic programming · Verify project details
-        </div>
-        <h3>
-         C++ Polynomial Class
-        </h3>
-        <p>
-         An object-oriented C++ exercise centered on representing and manipulating polynomials. Use this project to demonstrate class design and mathematical operations implemented in code.
-        </p>
-        <p class="detail">
-         <strong>
-          Process:
-         </strong>
-         Explain the class interface, implementation decisions, and tests you actually completed.
-        </p>
-        <p class="detail">
-         <strong>
-          My role:
-         </strong>
-         <em>
-          Confirm whether this was an individual or team project and describe your contribution.
-         </em>
-        </p>
-        <p class="detail">
-         <strong>
-          Skills:
-         </strong>
-         C++, object-oriented programming, testing.
-        </p>
-        <div class="tags">
-         <span class="tag">
-          C++
-         </span>
-         <span class="tag">
-          OOP
-         </span>
-         <span class="tag">
-          Testing
-         </span>
-        </div>
-        <div class="project-links">
-         <a class="textlink" href="https://github.com/sangampraz?tab=repositories" rel="noopener noreferrer" target="_blank">
-          Browse code ↗
-         </a>
-        </div>
-       </div>
-      </article>
-      <article class="project">
-       <div class="visual">
-        <div class="symbol">
-         { }
-        </div>
-        <div class="hint">
-         Add a data structure diagram or program output screenshot
-        </div>
-        <div class="filehint">
-         Suggested: images/data-structures.png
-        </div>
-       </div>
-       <div class="project-body">
-        <div class="status">
-         Academic programming · Verify project details
-        </div>
-        <h3>
-         C++ Data Structures
-        </h3>
-        <p>
-         A collection of data structure implementations and exercises in C++. This work demonstrates how fundamental structures organize data and support efficient algorithms.
-        </p>
-        <p class="detail">
-         <strong>
-          Process:
-         </strong>
-         Describe the structures you implemented, design tradeoffs, and test cases you used.
-        </p>
-        <p class="detail">
-         <strong>
-          My role:
-         </strong>
-         <em>
-          Confirm individual/team status and your exact implementations.
-         </em>
-        </p>
-        <p class="detail">
-         <strong>
-          Skills:
-         </strong>
-         C++, data structures, algorithmic reasoning, debugging.
-        </p>
-        <div class="tags">
-         <span class="tag">
-          C++
-         </span>
-         <span class="tag">
-          Algorithms
-         </span>
-         <span class="tag">
-          Data Structures
-         </span>
-        </div>
-        <div class="project-links">
-         <a class="textlink" href="https://github.com/sangampraz?tab=repositories" rel="noopener noreferrer" target="_blank">
-          Browse code ↗
-         </a>
-        </div>
-       </div>
-      </article>
-      <article class="project">
-       <div class="visual">
-        <div class="symbol">
-         8 3 +
-        </div>
-        <div class="hint">
-         Add a terminal screenshot of the postfix evaluator running
-        </div>
-        <div class="filehint">
-         Suggested: images/postfix.png
-        </div>
-       </div>
-       <div class="project-body">
-        <div class="status">
-         Academic programming · Verify project details
-        </div>
-        <h3>
-         Postfix Expression Evaluator
-        </h3>
-        <p>
-         A programming exercise for evaluating mathematical expressions in postfix notation. The project offers a practical way to explain stack-based expression evaluation.
-        </p>
-        <p class="detail">
-         <strong>
-          Process:
-         </strong>
-         Show how input is parsed, how values are processed, and how your program handles invalid expressions.
-        </p>
-        <p class="detail">
-         <strong>
-          My role:
-         </strong>
-         <em>
-          Confirm individual/team status and what you personally implemented.
-         </em>
-        </p>
-        <p class="detail">
-         <strong>
-          Skills:
-         </strong>
-         C++, stacks, expression evaluation, testing.
-        </p>
-        <div class="tags">
-         <span class="tag">
-          C++
-         </span>
-         <span class="tag">
-          Stacks
-         </span>
-         <span class="tag">
-          Problem Solving
-         </span>
-        </div>
-        <div class="project-links">
-         <a class="textlink" href="https://github.com/sangampraz?tab=repositories" rel="noopener noreferrer" target="_blank">
-          Browse code ↗
-         </a>
-        </div>
-       </div>
-      </article>
-     </div>
-     <p class="note">
-      Image placeholders are intentionally original CSS elements. Replace them with screenshots you created; attribute any images or diagrams made by someone else.
-     </p>
-    </div>
-   </section>
-   <section id="experience">
-    <div class="container">
-     <div class="sectionhead">
-      <div>
-       <div class="eyebrow">
-        03 / Professional Growth
-       </div>
-       <h2>
-        Experience &amp; certification
-       </h2>
       </div>
-      <p>
-       Applying analytical thinking in professional settings and continuing to build technical skills.
-      </p>
-     </div>
-     <div class="timeline">
-      <div class="panel">
-       <div class="date">
-        June – September 2024
-       </div>
-       <h3>
-        Junior Business Analyst Intern
-       </h3>
-       <p>
-        Cimplesoft
-       </p>
-       <ul>
-        <li>
-         Boosted online visibility by
-         <strong>
-          15%
-         </strong>
-         through optimized business account management.
-        </li>
-        <li>
-         Increased ad click-through rates by
-         <strong>
-          10%
-         </strong>
-         through keyword refinement.
-        </li>
-        <li>
-         Enhanced organic traffic by
-         <strong>
-          6%
-         </strong>
-         through implemented SEO strategies.
-        </li>
-       </ul>
-       <p>
-        My internship strengthened my ability to use performance metrics to evaluate outcomes, refine strategies, and communicate results.
-       </p>
+    </section>
+    <section id="experience">
+      <div class="container">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">
+            </div>
+            <h2>
+              Experience &amp; certification
+            </h2>
+          </div>
+          <p>
+            Applying analytical thinking in professional settings and continuing to build technical skills.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="panel">
+            <div class="date">
+              June – September 2024
+            </div>
+            <h3>
+              Junior Business Analyst Intern
+            </h3>
+            <p>
+              Cimplesoft
+            </p>
+            <ul>
+              <li>
+                Boosted online visibility by
+                <strong>
+                  15%
+                </strong>
+                through optimized business account management.
+              </li>
+              <li>
+                Increased ad click-through rates by
+                <strong>
+                  10%
+                </strong>
+                through keyword refinement.
+              </li>
+              <li>
+                Enhanced organic traffic by
+                <strong>
+                  6%
+                </strong>
+                through implemented SEO strategies.
+              </li>
+            </ul>
+            <p>
+              My internship strengthened my ability to use performance metrics to evaluate outcomes, refine strategies,
+              and communicate results.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="date">
+              Expected December 2026
+            </div>
+            <h3>
+              MongoDB Python Developer Path
+            </h3>
+            <p>
+              <strong>
+                Planned certification / learning path
+              </strong>
+            </p>
+            <p>
+              I intend to complete the MongoDB Python Developer Path to strengthen my knowledge of working with MongoDB
+              from Python applications.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="panel">
-       <div class="date">
-        Expected December 2026
-       </div>
-       <h3>
-        MongoDB Python Developer Path
-       </h3>
-       <p>
-        <strong>
-         Planned certification / learning path
-        </strong>
-       </p>
-       <p>
-        I intend to complete the MongoDB Python Developer Path to strengthen my knowledge of working with MongoDB from Python applications.
-       </p>
-       <p class="note">
-        In progress / planned — not yet completed or awarded. Update this entry when you finish, and use the credential's exact official name.
-       </p>
+    </section>
+    <section id="skills">
+      <div class="container">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">
+            </div>
+            <h2>
+              Technical skills
+            </h2>
+          </div>
+          <p>
+            Technologies and concepts represented in my academic and project work.
+          </p>
+        </div>
+        <div class="skill-grid">
+          <div class="panel">
+            <h3>
+              Languages
+            </h3>
+            <p>
+              C++, Java, TypeScript, Python, Rust, Go
+            </p>
+          </div>
+          <div class="panel">
+            <h3>
+              Backend &amp; data
+            </h3>
+            <p>
+              Hono, Cloudflare Workers, SQLite, Cloudflare D1, Drizzle ORM
+            </p>
+          </div>
+          <div class="panel">
+            <h3>
+              Practices &amp; tools
+            </h3>
+            <p>
+              Git, GitHub, REST APIs, object-oriented programming, data structures, Agile planning
+            </p>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-   </section>
-   <section id="skills">
-    <div class="container">
-     <div class="sectionhead">
-      <div>
-       <div class="eyebrow">
-        04 / Toolbox
-       </div>
-       <h2>
-        Technical skills
-       </h2>
+    </section>
+    <section id="education">
+      <div class="container">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">
+            </div>
+            <h2>
+              Academic background
+            </h2>
+          </div>
+        </div>
+        <div class="education">
+          <div class="panel">
+            <div class="date">
+              Expected June 2027
+            </div>
+            <h3>
+              Seattle Pacific University
+            </h3>
+            <p>
+              Bachelor's degree in Computer Science
+            </p>
+          </div>
+          <div class="panel">
+            <div class="date">
+              2023
+            </div>
+            <h3>
+              Seattle Central College
+            </h3>
+            <p>
+              Associate of Science · Magna Cum Laude
+            </p>
+          </div>
+        </div>
       </div>
-      <p>
-       Technologies and concepts represented in my academic and project work.
-      </p>
-     </div>
-     <div class="skill-grid">
-      <div class="panel">
-       <h3>
-        Languages
-       </h3>
-       <p>
-        C++, Java, TypeScript, Python
-       </p>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="eyebrow">
+          </div>
+          <h2>
+            Let's connect.
+          </h2>
+          <p>
+            I'm always interested in learning, collaborating, and discussing software projects and opportunities.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:prajapatis1@spu.edu">
+              Email me 
+            </a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/prajapati-sangam/" rel="noopener noreferrer"
+              target="_blank">
+              LinkedIn 
+            </a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/sangampraz" rel="noopener noreferrer" target="_blank">
+              GitHub 
+            </a>
+            <a href="https://sangampraz.github.io/" rel="noopener noreferrer" target="_blank">
+              Website 
+            </a>
+            <a href="mailto:prajapatis1@spu.edu">
+              prajapatis1@spu.edu
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="panel">
-       <h3>
-        Backend &amp; data
-       </h3>
-       <p>
-        Hono, Cloudflare Workers, SQLite, Cloudflare D1, Drizzle ORM
-       </p>
-      </div>
-      <div class="panel">
-       <h3>
-        Practices &amp; tools
-       </h3>
-       <p>
-        Git, GitHub, REST APIs, object-oriented programming, data structures, Agile planning
-       </p>
-      </div>
-     </div>
-    </div>
-   </section>
-   <section id="education">
-    <div class="container">
-     <div class="sectionhead">
-      <div>
-       <div class="eyebrow">
-        05 / Education
-       </div>
-       <h2>
-        Academic background
-       </h2>
-      </div>
-     </div>
-     <div class="education">
-      <div class="panel">
-       <div class="date">
-        Expected June 2027
-       </div>
-       <h3>
-        Seattle Pacific University
-       </h3>
-       <p>
-        Bachelor's degree in Computer Science (in progress)
-       </p>
-      </div>
-      <div class="panel">
-       <div class="date">
-        2023
-       </div>
-       <h3>
-        Seattle Central College
-       </h3>
-       <p>
-        Associate of Science · Magna Cum Laude
-       </p>
-      </div>
-     </div>
-    </div>
-   </section>
-   <section id="contact">
-    <div class="container">
-     <div class="contact">
-      <div class="eyebrow">
-       06 / Get in touch
-      </div>
-      <h2>
-       Let's connect.
-      </h2>
-      <p>
-       I'm always interested in learning, collaborating, and discussing software projects and opportunities.
-      </p>
-      <div class="actions">
-       <a class="btn primary" href="mailto:prajapatis1@spu.edu">
-        Email me ↗
-       </a>
-       <a class="btn secondary" href="https://www.linkedin.com/in/prajapati-sangam/" rel="noopener noreferrer" target="_blank">
-        LinkedIn ↗
-       </a>
-      </div>
-      <div class="socials">
-       <a href="https://github.com/sangampraz" rel="noopener noreferrer" target="_blank">
-        GitHub ↗
-       </a>
-       <a href="https://sangampraz.github.io/" rel="noopener noreferrer" target="_blank">
-        Website ↗
-       </a>
-       <a href="mailto:prajapatis1@spu.edu">
-        prajapatis1@spu.edu
-       </a>
-      </div>
-     </div>
-    </div>
-   </section>
+    </section>
   </main>
   <footer>
-   <div class="container footerline">
-    <span>
-     ©
-     <span id="year">
-      2026
-     </span>
-     Sangam Prajapati. Built with HTML, CSS &amp; JavaScript.
-    </span>
-    <span>
-     Designed with care · Seattle, WA
-    </span>
-   </div>
+    <div class="container footerline">
+      <span>
+        ©
+        <span id="year">
+          2026
+        </span>
+        Sangam Prajapati. Built with HTML, CSS &amp; JavaScript.
+      </span>
+      <span>
+      Seattle, WA
+      </span>
+    </div>
   </footer>
   <script>
-   const yearElement = document.getElementById('year');
-yearElement.textContent = new Date().getFullYear();
+    const yearElement = document.getElementById('year');
+    yearElement.textContent = new Date().getFullYear();
 
-const toggle = document.getElementById('menuToggle');
-const links = document.getElementById('navlinks');
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navlinks');
 
-toggle.addEventListener('click', () => {
-  const open = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(open));
-  toggle.textContent = open ? 'Close ✕' : 'Menu ☰';
-});
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close ✕' : 'Menu ☰';
+    });
 
-links.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.textContent = 'Menu ☰';
-  });
-});
+    links.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = 'Menu ☰';
+      });
+    });
   </script>
- </body>
+</body>
+
 </html>
